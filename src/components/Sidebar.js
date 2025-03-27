@@ -4,27 +4,21 @@ const Sidebar = () => {
 
   return (
     <aside className="z-20 hidden w-64 overflow-y-auto bg-white md:block flex-shrink-0">
-      <div className="py-8 text-gray-500 ">
-        <Link to="/" className="ml-6 text-4xl font-bold text-c-green-300">
-          EcoBin
+      <div className="py-2 text-gray-500 ">
+        <Link to="/" className="ml-7 -mb-4 ">
+        <img
+              className="logo z-50 w-[90px] md:w-[101px] lg:w-[122px] xl:w-[138px]"
+              src="/assets/Logo/Logo.svg"
+              alt="Company logo"
+            />
         </Link>
         <ul className="mt-28">
-          <li className="relative px-6 py-3">
-            {/* <span className="absolute inset-y-0 left-0 w-1 bg-c-green-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span> */}
-            <Link to="/admin/dashboard" className="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800">
-              {/* <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg> */}
-              <span className="ml-4">Dashboard</span>
-            </Link>
-          </li>
-        </ul>
-        <ul>
           {[
+            { name: "Dashboard", href: "dashboard" },
             { name: "User", href: "all-user" },
             { name: "Message", href: "collector-message" },
-            {/* { name: "Charts", href: "/charts" },
-            { name: "Buttons", href: "/buttons" },
+            { name: "Feedback", href: "feedback" },
+            {/*  { name: "Buttons", href: "/buttons" },
             { name: "Modals", href: "/modals" },
             { name: "Tables", href: "/tables" } */}
           ].map((item, index) => (

@@ -26,7 +26,7 @@ const AdminPage = () => {
     <div className="flex h-screen bg-gray-50 ">
       <Sidebar />
       <div className="flex flex-col flex-1 w-full">
-        <header className="z-10 py-4 bg-white shadow-md">
+        <header className="z-10 py-4 bg-white">
           <div className="container flex items-center justify-between h-full px-6 mx-auto text-c-green-600">
             {/* Mobile Hamburger */}
             <button
@@ -71,7 +71,7 @@ const AdminPage = () => {
             </div>
 
             {/* Icons & Menus */}
-            <ul className="flex items-center space-x-6">
+            <ul className="flex items-center space-x-2">
               {/* Theme Toggle */}
               <li>
                 <button
