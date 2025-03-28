@@ -178,6 +178,10 @@ const BecomeACollector = () => {
       toast.error("Phone number must be exactly 10 digits.");
       return;
     }
+    if (!frontfile || !backfile || !vehiclefile) {
+      toast.error("Please upload all required images.");
+      return;
+    }
 
     const response = await fetch(SummaryApi.collectorForm.url, {
       method: SummaryApi.collectorForm.method,
@@ -472,6 +476,8 @@ const BecomeACollector = () => {
                             type="file"
                             className="hidden"
                             onChange={fhandleUpNIC}
+                            title="Must be exactly 10 digits"
+                            required
                           />
                         </label>
                       </div>
@@ -533,6 +539,7 @@ const BecomeACollector = () => {
                             type="file"
                             className="hidden"
                             onChange={bhandleUpNIC}
+                            required
                           />
                         </label>
                       </div>
@@ -547,6 +554,7 @@ const BecomeACollector = () => {
                         value={data.reginumber}
                         onChange={handleOneChange}
                         placeholder="Registration Number"
+                        required
                       />
                       <input
                         className="outline-none flex-1 placeholder:text-gray-400 placeholder:text-md placeholder:font-chivo py-5 px-[30px]"
@@ -555,6 +563,7 @@ const BecomeACollector = () => {
                         value={data.chassisnumber}
                         onChange={handleOneChange}
                         placeholder="Chassis Number"
+                        required
                       />
                     </div>
                     <div className="flex flex-col gap-6 mb-6 lg:flex-row xl:gap-[30px] bg-white">
