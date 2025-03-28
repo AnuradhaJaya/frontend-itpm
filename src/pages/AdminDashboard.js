@@ -59,7 +59,7 @@ const AdminDashboard = () => {
 
   return (
     <div>
-      <h2 className="my-6 text-2xl font-semibold text-gray-700">Dashboard</h2>
+      <h2 className="my-6 text-3xl font-semibold text-gray-700">Dashboard</h2>
 
       {/* Cards */}
       <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
@@ -71,10 +71,10 @@ const AdminDashboard = () => {
             </svg>
           </div>
           <div>
-            <p className="mb-2 text-sm font-medium text-gray-600">
+            <p className="mb-2 text-lg font-medium text-gray-600">
               Total clients
             </p>
-            <p className="text-lg font-semibold text-gray-700">6389</p>
+            <p className="text-2xl font-semibold text-gray-700">6389</p>
           </div>
         </div>
 
@@ -90,10 +90,10 @@ const AdminDashboard = () => {
             </svg>
           </div>
           <div>
-            <p className="mb-2 text-sm font-medium text-gray-600">
+            <p className="mb-2 text-lg font-medium text-gray-600">
               Account balance
             </p>
-            <p className="text-lg font-semibold text-gray-700">$ 46,760.89</p>
+            <p className="text-2xl font-semibold text-gray-700">$ 46,760.89</p>
           </div>
         </div>
 
@@ -105,8 +105,8 @@ const AdminDashboard = () => {
             </svg>
           </div>
           <div>
-            <p className="mb-2 text-sm font-medium text-gray-600">New sales</p>
-            <p className="text-lg font-semibold text-gray-700">376</p>
+            <p className="mb-2 text-lg font-medium text-gray-600">New sales</p>
+            <p className="text-2xl font-semibold text-gray-700">376</p>
           </div>
         </div>
 
@@ -122,14 +122,14 @@ const AdminDashboard = () => {
             </svg>
           </div>
           <div>
-            <p className="mb-2 text-sm font-medium text-gray-600">
+            <p className="mb-2 text-lg font-medium text-gray-600">
               Pending contacts
             </p>
-            <p className="text-lg font-semibold text-gray-700">35</p>
+            <p className="text-2xl font-semibold text-gray-700">35</p>
           </div>
         </div>
       </div>
-      <h2 className="my-6 text-2xl font-semibold text-gray-700">Charts</h2>
+      {/* <h2 className="my-6 text-3xl font-semibold text-gray-700">Charts</h2> */}
       <div className="grid gap-6 mb-8 md:grid-cols-2">
         {/* Revenue chart */}
         <div className="max-w-[500px] p-4 bg-white rounded-lg shadow-xs">
@@ -157,7 +157,7 @@ const AdminDashboard = () => {
           <Line data={lineData} />
           <div className="flex justify-center mt-4 space-x-3 text-sm text-gray-600">
             <div className="flex items-center">
-              <span className="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"></span>
+              <span className="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"></span>
               <span>Organic</span>
             </div>
             <div className="flex items-center">

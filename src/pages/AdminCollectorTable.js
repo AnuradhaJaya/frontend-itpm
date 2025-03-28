@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import SummaryApi from '../common'
+import moment from "moment";
+import { BiMessageDots } from "react-icons/bi";
+import EditCollectorReq from "../components/EditCollectorReq";
 
 // TableRow Component
-const TableRow = ({ client, amount, status, date, onEdit, onDelete }) => {
+const TableRow = ({ fname,lname, email, phone,location,area,status, date, onEdit, onDelete }) => {
   return (
     <tr className="text-gray-700">
       <TableCell>
         <div className="flex items-center text-sm">
-          <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
+          {/* <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
             <img
               className="object-cover w-full h-full rounded-full"
               src={client.avatar}
@@ -17,14 +21,16 @@ const TableRow = ({ client, amount, status, date, onEdit, onDelete }) => {
               className="absolute inset-0 rounded-full shadow-inner"
               aria-hidden="true"
             ></div>
-          </div>
+          </div> */}
           <div>
-            <p className="font-semibold">{client.name}</p>
-            <p className="text-xs text-gray-600">{client.role}</p>
+            <p className="font-semibold">{fname} {lname}</p>
+            <p className="text-[12px] text-gray-600">{email}</p>
           </div>
         </div>
       </TableCell>
-      <TableCell>${amount}</TableCell>
+      <TableCell>{phone}</TableCell>
+      <TableCell>{location}</TableCell>
+      <TableCell>{area}</TableCell>
       <TableCell>
         <StatusBadge status={status} />
       </TableCell>
@@ -32,22 +38,14 @@ const TableRow = ({ client, amount, status, date, onEdit, onDelete }) => {
       <TableCell>
         <div className="flex items-center space-x-4 text-sm">
           <button
-            className="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg focus:outline-none focus:shadow-outline-gray"
+            className="flex items-center justify-between px-2 py-2 text-2xl font-medium leading-5 text-blue-600 rounded-lg focus:outline-none focus:shadow-outline-gray"
             aria-label="Edit"
             onClick={onEdit}
           >
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
-              ></path>
-            </svg>
+            <BiMessageDots />
+
           </button>
-          <button
+          {/* <button
             className="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg focus:outline-none focus:shadow-outline-gray"
             aria-label="Delete"
             onClick={onDelete}
@@ -64,7 +62,7 @@ const TableRow = ({ client, amount, status, date, onEdit, onDelete }) => {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </button>
+          </button> */}
         </div>
       </TableCell>
     </tr>
@@ -96,21 +94,21 @@ const StatusBadge = ({ status }) => {
 
 // Table Component
 const AdminCollectorTable = () => {
-  const data = [
-    {
-      client: { name: "Hans Burger", role: "10x Developer", avatar: "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ" },
-      amount: 863.45,
-      status: "Approved",
-      date: "6/10/2020",
-    },
-    {
-      client: { name: "Jolina Angelie", role: "Unemployed", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&facepad=3&fit=facearea&s=707b9c33066bf8808c934c8ab394dff6" },
-      amount: 369.95,
-      status: "Pending",
-      date: "6/10/2020",
-    },
-    // Add more rows as needed
-  ];
+  const [allCollecter,setAllCollecter] =useState([])
+  const [edit, setEdit] = useState(null);
+
+
+
+  const fetchAllCollecter = async() =>{
+    const response = await fetch(SummaryApi.allCollector.url)
+    const dataResponse = await response.json()
+
+    setAllCollecter(dataResponse?.data || [])
+  }
+  useEffect(() =>{
+    fetchAllCollecter()
+  },[])
+
 
   const handleEdit = (clientName) => {
     console.log(`Edit action triggered for ${clientName}`);
@@ -123,39 +121,52 @@ const AdminCollectorTable = () => {
   return (
     <div className="w-full overflow-hidden rounded-lg shadow-xs">
       <h4 className="mb-4 text-lg font-semibold text-gray-600">
-        Table with actions
+      Collectors' requests
       </h4>
       <div className="max-w-[1200px] overflow-x-auto">
         <table className="w-full whitespace-no-wrap">
           <thead>
             <tr className="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b bg-gray-50">
-              <th className="px-4 py-3">Client</th>
-              <th className="px-4 py-3">Amount</th>
+              <th className="px-4 py-3">User</th>
+              <th className="px-4 py-3">Phone Number</th>
+              <th className="px-4 py-3">Location</th>
+              <th className="px-4 py-3">Area</th>
               <th className="px-4 py-3">Status</th>
               <th className="px-4 py-3">Date</th>
               <th className="px-4 py-3">Actions</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y">
-            {data.map((row, index) => (
+            {allCollecter.map((row, index) => (
               <TableRow
                 key={index}
-                client={row.client}
-                amount={row.amount}
+                fname={row?.fname}
+                lname={row?.lname}
+                email={row?.email}
+                phone={row?.phone}
+                location={row?.location}
+                area={row?.workarea}
                 status={row.status}
-                date={row.date}
-                onEdit={() => handleEdit(row.client.name)}
-                onDelete={() => handleDelete(row.client.name)}
+                date={moment(row?.createdAt).format("MMM Do YY")}
+                onEdit={() => setEdit(row)}
+                // onDelete={() => handleDelete(row.client.name)}
               />
             ))}
+            {edit &&(
+              <EditCollectorReq
+                onClose={() => setEdit(null)}
+                                collecData={edit}
+                                fetchData={fetchAllCollecter}
+              />
+            )}
           </tbody>
         </table>
       </div>
-      <div className="grid px-4 py-3 max-w-[1200px] text-xs font-semibold tracking-wide text-gray-500 uppercase border-t bg-gray-50 sm:grid-cols-9">
+      {/* <div className="grid px-4 py-3 max-w-[1200px] text-xs font-semibold tracking-wide text-gray-500 uppercase border-t bg-gray-50 sm:grid-cols-9">
         <span className="flex items-center col-span-3">Showing 21-30 of 100</span>
         <span className="col-span-2"></span>
         <Pagination />
-      </div>
+      </div> */}
     </div>
   );
 };

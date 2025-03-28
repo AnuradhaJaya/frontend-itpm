@@ -24,7 +24,19 @@ const SummaryApi = {
   updateUser:{
     url: `${backendDomin}/api/update-user-role`,
     method: "post",
-  }
+  },
+  collectorForm:{
+    url: `${backendDomin}/api/collector-form`,
+    method: "post",
+  },
+  allCollector:{
+    url: `${backendDomin}/api/get-collector`,
+    method: "get"
+  },
+  updateCollector:{
+    url: `${backendDomin}/api/update-collector`,
+    method: "post"
+  },
 };
 
 export default SummaryApi;

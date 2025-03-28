@@ -9,6 +9,9 @@ import Admin from "../pages/AdminPage";
 import AdminDashboard from "../pages/AdminDashboard";
 import AdminUserTable from "../pages/AdminUserTable";
 import AdminCollectorTable from "../pages/AdminCollectorTable";
+import Store from "../pages/Store";
+import Profile from "../pages/Profile";
+import Collector from "../pages/Collector";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,9 +34,24 @@ const router = createBrowserRouter([
         element: <Signup />,
       },
       {
+        path: "profile",
+        element: <Profile/>,
+      },
+      {
         path: "become-a-collector",
         element: <BecomeACollector />,
       },
+      {
+        path: "collector-dashboard",
+        element: <Collector/>,
+      },
+      {
+        path: "store",
+        element: <Store/>,
+      },
+
+
+
             // admin panel
             {
               path: "admin",

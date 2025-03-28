@@ -3,20 +3,24 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
 
   return (
-    <aside className="z-20 hidden w-64 overflow-y-auto bg-white md:block flex-shrink-0">
+    <aside className=" hidden w-64 overflow-y-auto bg-white md:block flex-shrink-0">
       <div className="py-2 text-gray-500 ">
         <Link to="/" className="ml-7 -mb-4 ">
-        <img
+        {/* <img
               className="logo z-50 w-[90px] md:w-[101px] lg:w-[122px] xl:w-[138px]"
               src="/assets/Logo/Logo.svg"
               alt="Company logo"
-            />
+            /> */}
+            <div className="ml-10 text-[40px] font-bold text-dark">
+            EcoBin
+
+            </div>
         </Link>
         <ul className="mt-28">
           {[
             { name: "Dashboard", href: "dashboard" },
-            { name: "User", href: "all-user" },
-            { name: "Message", href: "collector-message" },
+            { name: "Resident", href: "all-user" },
+            { name: "Collecter", href: "collector-message" },
             { name: "Feedback", href: "feedback" },
             {/*  { name: "Buttons", href: "/buttons" },
             { name: "Modals", href: "/modals" },

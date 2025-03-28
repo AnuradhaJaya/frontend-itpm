@@ -11,45 +11,54 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+
+
+
 const services = [
   {
-    title: "Business Strategy",
-    description:
-      "You are always welcome to visit our little den. Professional in their craft! All products were super amazing with strong attention to details, comps, and overall vibe.",
+    title: "Convenient & Hassle-Free",
+    description:"ECOBIN smart bins simplify waste disposal with real-time alerts and optimized routes, saving users and operators time and effort.",
     icon: "assets/images/icons/icon-flower.svg",
     bgIcon: "assets/images/icons/icon-flower-white.svg",
-    bgColor: "bg-c-green-100/50",
+    bgColor: "bg-c-green-300/60",
   },
   {
-    title: "Local Marketing",
-    description:
-      "You are always welcome to visit our little den. Professional in their craft! All products were super amazing with strong attention to details, comps, and overall vibe.",
+    title: "Earn from Your Waste",
+    description:"ECOBIN rewards users for recycling by turning waste into valuable resources for the community, by offering incentives such as discounts, points or cash back.",
     icon: "assets/images/icons/icon-map.svg",
     bgIcon: "assets/images/icons/icon-map-white.svg",
-    bgColor: "bg-c-green-100/50",
+    bgColor: "bg-c-green-300/60",
   },
   {
-    title: "Social Media",
-    description:
-      "You are always welcome to visit our little den. Professional in their craft! All products were super amazing with strong attention to details, comps, and overall vibe.",
+    title: "Eco-Friendly Impact",
+    description:"Reduces landfill waste, promotes recycling and reduces carbon emissions, helping to create a cleaner, greener and more sustainable environment for future generations.",
     icon: "assets/images/icons/icon-pine.svg",
     bgIcon: "assets/images/icons/icon-pine-white.svg",
-    bgColor: "bg-c-green-100/50",
+    bgColor: "bg-c-green-300/60",
+  },
+  {
+    title: "Trusted by Thousands",
+    description:"ECOBIN is a proven solution adopted by municipalities, businesses and residents around the world, ensuring reliability, transparency and measurable environmental benefits.",
+    icon: "assets/images/icons/icon-pine.svg",
+    bgIcon: "assets/images/icons/icon-pine-white.svg",
+    bgColor: "bg-c-green-300/60",
   },
 ];
 
 // ...
 const features = [
-  { title: "Boost your sale", icon: "/assets/images/icons/icon-leaf.svg" },
+  { title: "Boost your sale", icon: "/assets/number-1_9507565.png" },
   {
     title: "Smart Installation Tools",
-    icon: "/assets/images/icons/icon-leaf.svg",
+    icon: "/assets/number-2_9507577.png",
   },
   {
     title: "Introducing New Features",
-    icon: "/assets/images/icons/icon-leaf.svg",
+    icon: "/assets/number-3_9507588.png",
   },
-  { title: "Dynamic Boosting", icon: "/assets/images/icons/icon-leaf.svg" },
+  { title: "Dynamic Boosting",
+    icon: "/assets/number-4_9507599.png" 
+  },
 ];
 
 // ...
@@ -218,27 +227,26 @@ const Home = () => {
         </div>
 
         {/* Service Cards */}
-        <div className="flex items-center justify-between mx-auto relative max-w-[1320px]">
-          <div class="lg:flex lg:gap-5 xl:gap-[30px]">
-            {services.map((service, index) => (
+        <div className="max-w-[1320px] mx-auto relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">            {services.map((service, index) => (
               <div
                 key={index}
                 className={`rounded-2xl p-8 md:py-14 md:px-12 relative mb-5 flex flex-col justify-between transition-all duration-300 ${service.bgColor} hover:-translate-y-1`}
               >
                 <div>
-                  <img
+                  {/* <img
                     className="h-20 w-20 object-cover mb-8"
                     src={service.icon}
                     alt="icon"
-                  />
-                  <h2 className="font-bold text-white font-chivo text-2xl md:text-3xl mb-8">
+                  /> */}
+                  <h2 className="font-bold text-dark font-chivo text-2xl md:text-3xl mb-8">
                     {service.title}
                   </h2>
-                  <p className="text-gray-600 mb-8">{service.description}</p>
+                  <p className="font-medium text-gray-600 mb-8">{service.description}</p>
                 </div>
                 <Link
                   to="/"
-                  className="flex items-center transition-all duration-200 group px-6 py-4 lg:px-8 lg:py-5 rounded-full bg-white text-gray-900 hover:bg-c-green-300 hover:text-white w-fit hover:-translate-y-1"
+                  className="flex items-center transition-all duration-200 group px-6 py-4 lg:px-6 lg:py-4 rounded-full bg-white text-gray-900 hover:bg-c-green-300 hover:text-white w-fit hover:-translate-y-1"
                 >
                   <span className="text-lg font-chivo font-semibold">
                     Learn More
@@ -249,11 +257,11 @@ const Home = () => {
                     alt="arrow right icon"
                   />
                 </Link>
-                <img
+                {/* <img
                   className="absolute bottom-0 right-0 z-0 w-20 md:w-36 h-20 md:h-36 translate-x-1/5 translate-y-1/5 xl:translate-x-0 xl:translate-y-0"
                   src={service.bgIcon}
                   alt="background icon"
-                />
+                /> */}
               </div>
             ))}
           </div>
@@ -268,7 +276,7 @@ const Home = () => {
           <div className="relative">
             <img
               className="rounded-2xl mb-[30px] lg:mb-0 lg:flex-1"
-              src="/assets/images/thumbnail-2.png"
+              src="/assets/garbage-from-nature.jpg"
               alt="Agon"
               width={500}
               height={500}
@@ -281,7 +289,7 @@ const Home = () => {
               What We Do, What You Get
             </span>
             <h3 className="font-chivo font-bold lg:text-5xl md:text-[46px] md:leading-[52px] text-[35px] leading-[44px] mb-[22px]">
-              How ECOBIN Works{" "}
+              How ECOBIN Works
             </h3>
             <p className="text-lg text-gray-600 mb-[50px]">
               Discover the simple steps to recycle smarter! From submitting your
@@ -317,13 +325,13 @@ const Home = () => {
         </div>
       </div>
       {/* find your nearest bin */}
-      <div className="tab-content mt-24 lg:gap-8 lg:flex  flex items-center justify-between mx-auto relative max-w-[1320px] bg-c-green-300/10 branding">
+      <div className="tab-content mt-24 lg:gap-8 lg:flex  flex items-center justify-between mx-auto relative max-w-[1320px] bg-c-green-300/50 branding">
         {/* Left Section - Text Content */}
         <div className="p-5 md:p-16 lg:w-1/2">
-          <h2 className="font-bold font-chivo text-2xl leading-[32px] md:text-4xl mb-8">
+          <h2 className="font-bold font-chivo text-2xl  leading-[32px] md:text-4xl mb-8">
             Find Your Nearest Bin
           </h2>
-          <p className="text-lg text-gray-700 mb-10">
+          <p className="text-lg text-gray-600 mb-10">
             Locate your closest collection point with just a few clicks. Our
             interactive map helps you find bins that accept your specific items,
             making recycling convenient and efficient.
@@ -351,7 +359,7 @@ const Home = () => {
         <div className="relative lg:w-1/2">
           <img
             className="h-full w-full object-cover"
-            src="/assets/images/thumbnail-1.png"
+            src="/assets/hero_geocoding_api_720 1.png"
             alt="Agon"
             width={600}
             height={400}
@@ -365,14 +373,14 @@ const Home = () => {
           />
 
           {/* Play Button */}
-          <button className="rounded-full bg-white grid place-items-center absolute w-[135px] h-[135px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-0 shadow-lg">
+          {/* <button className="rounded-full bg-white grid place-items-center absolute w-[135px] h-[135px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-0 shadow-lg">
             <img
               src="/assets/images/icons/icon-play.svg"
               alt="play button"
               width={30}
               height={30}
             />
-          </button>
+          </button> */}
         </div>
       </div>
       {/* what our user say! */}

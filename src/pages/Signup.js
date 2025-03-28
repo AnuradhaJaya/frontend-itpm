@@ -31,7 +31,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (data.password === data.confpassword) {
-      console.log("SummaryApi.signUp.url", SummaryApi.signUp.url);
+      //console.log("SummaryApi.signUp.url", SummaryApi.signUp.url);
       const dataResponse = await fetch(SummaryApi.signUp.url, {
         method: SummaryApi.signUp.method,
         headers: {

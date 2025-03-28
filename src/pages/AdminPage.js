@@ -48,7 +48,7 @@ const AdminPage = () => {
 
             {/* Search Input */}
             <div className="flex justify-center flex-1 lg:mr-32">
-              <div className="relative w-full max-w-xl">
+              <div className="relative w-full max-w-md">
                 <div className="absolute inset-y-0 flex items-center pl-3 pointer-events-none">
                   <svg
                     className="w-5 h-5 text-gray-500"
@@ -63,7 +63,7 @@ const AdminPage = () => {
                   </svg>
                 </div>
                 <input
-                  className="w-full pl-10 pr-4 py-2 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-c-green-900 focus:ring-1 focus:ring-c-green-900 transition-shadow duration-200"
+                  className="w-full pl-10 pr-4 py-2 text-md text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-c-green-900 focus:ring-1 focus:ring-c-green-900 transition-shadow duration-200"
                   type="text"
                   placeholder="Search for projects..."
                 />
@@ -71,7 +71,7 @@ const AdminPage = () => {
             </div>
 
             {/* Icons & Menus */}
-            <ul className="flex items-center space-x-2">
+            <ul className="flex items-center space-x-3">
               {/* Theme Toggle */}
               <li>
                 <button
@@ -79,7 +79,7 @@ const AdminPage = () => {
                   aria-label="Toggle color mode"
                 >
                   <svg
-                    className="w-5 h-5 text-gray-600 hover:text-gray-800 transition-colors duration-200"
+                    className="w-7 h-7 text-gray-600 hover:text-gray-800 transition-colors duration-200"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -95,7 +95,7 @@ const AdminPage = () => {
                   className="relative rounded-md p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-c-green-900 transition-all duration-200"
                   aria-label="Notifications"
                 >
-                  <MdNotifications className="w-5 h-5 text-gray-600 hover:text-gray-800 transition-colors duration-200" />
+                  <MdNotifications className="w-7 h-7 text-gray-600 hover:text-gray-800 transition-colors duration-200" />
                   {/* <svg
                     className="w-5 h-5 text-gray-600 hover:text-gray-800 transition-colors duration-200"
                     fill="currentColor"
@@ -123,20 +123,20 @@ const AdminPage = () => {
                   aria-label="Account"
                 >
                   <img
-                    className="w-8 h-8 rounded-full object-cover border-2 border-c-green-600 hover:border-c-green-900 transition-colors duration-200"
+                    className="w-10 h-10 rounded-full object-cover border-2 border-c-green-600 hover:border-c-green-900 transition-colors duration-200"
                     src="../assets/avatars/avatar7.png"
                     alt="User avatar"
                   />
                 </button>
                 {isProfileOpen && (
                   <ul className="absolute right-0 w-56 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg">
-                    <li className="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100">
+                    <li className="px-4 py-2 text-md text-gray-700 cursor-pointer hover:bg-gray-100">
                       Profile
                     </li>
-                    <li className="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100">
+                    <li className="px-4 py-2 text-md text-gray-700 cursor-pointer hover:bg-gray-100">
                       Settings
                     </li>
-                    <li className="px-4 py-2 text-sm text-red-600 cursor-pointer hover:bg-gray-100">
+                    <li className="px-4 py-2 text-md text-red-600 cursor-pointer hover:bg-gray-100">
                       Log out
                     </li>
                   </ul>
@@ -146,7 +146,7 @@ const AdminPage = () => {
           </div>
         </header>
         <main className="h-full ">
-          <div className="container px-6 mx-auto grid">
+          <div className="container px-10 pt-10 mx-auto grid">
             <Outlet />
           </div>
         </main>
