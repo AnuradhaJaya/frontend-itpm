@@ -104,7 +104,7 @@ const AdminPage = () => {
                     <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6z"></path>
                   </svg> */}
 
-                  <span className="absolute top-0 right-0 inline-block w-2 h-2 transform translate-x-1/2 -translate-y-1/2 bg-c-green-900 rounded-full"></span>
+                  <span className="absolute top-0 right-0 inline-block w-3 h-3 transform -translate-x-2 translate-y-1 bg-c-green-600 rounded-full"></span>
                 </button>
                 {isNotificationsOpen && (
                   <ul className="absolute right-0 w-56 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg">

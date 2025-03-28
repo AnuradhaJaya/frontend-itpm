@@ -56,12 +56,12 @@ const Login = () => {
   return (
     <>
       <Header />
-      <div id="login" className="bg-c-green-300/20">
+      <div id="login" className="bg-green/30">
         <div className="full-width flex">
           <div className="hidden flex-[1.2] lg:block">
             <img
-              className="h-full object-cover"
-              src="assets/images/thumbnail-18.png"
+              className="ml-[200px] w-[850px]"
+              src="assets/signin.png"
               alt="Agon"
             />
           </div>
